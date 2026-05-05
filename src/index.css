@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f1f5f9;
+  color: #0f172a;
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.5;
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+html.dark body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 52%, #020617 100%);
+  background-attachment: fixed;
+  color: #e2e8f0;
+}
+
+#root {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+section[id],
+footer[id] {
+  scroll-margin-top: 80px;
+}
+
+a,
+button {
+  transition: all 0.3s ease;
+}
+
+@keyframes skills-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+::selection {
+  background: rgba(43, 228, 255, 0.35);
+  color: #f8fafc;
+}
+
+.skills-track {
+  animation: skills-scroll 24s linear infinite;
+}
+
+.skills-marquee:hover .skills-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-track {
+    animation: none;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-2xl border border-slate-900/10 bg-white/70 backdrop-blur-lg shadow-[0_14px_34px_rgba(15,23,42,0.1)] dark:border-white/10 dark:bg-slate-900/50 dark:shadow-[0_18px_44px_rgba(2,6,23,0.58)];
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+    letter-spacing: 0.01em;
+  }
+}
