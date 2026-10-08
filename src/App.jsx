@@ -121,6 +121,15 @@ const PROJECTS = [
 const EXPERIENCE_EDUCATION = [
   {
     type: 'Experience',
+    year: '2026 – Present',
+    title: 'Junior PHP Developer',
+    institution: 'Hitasoft Technology Solutions Pvt. Ltd.',
+    detail:
+      'Contributing to the development and maintenance of PHP-based web applications, collaborating with the team to deliver scalable and efficient solutions.',
+    icon: FaBriefcase,
+  },
+  {
+    type: 'Experience',
     year: '2025 – 2026',
     title: 'Web Developer',
     institution: 'Ayantrix Solutions',
